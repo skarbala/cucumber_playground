@@ -3,8 +3,6 @@
 <!doctype html>
 <body lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <?php include 'partials/head.php'; ?>
-
-<body>
 <?php include 'partials/navigation.php' ?>
 <div class="container">
   <h1 class="text-center">Banana shop</h1>
@@ -20,6 +18,7 @@
               class="btn btn-block btn-warning">
         Calculate the price
       </button>
+
     </div>
   </div>
   <div class="row">
@@ -34,12 +33,16 @@
           <td>{{numberOfBananas}}</td>
         </tr>
         <tr>
+          <td>Total Price before dicount</td>
+          <td>{{fullPrice}}</td>
+        </tr>
+        <tr>
           <td>Discount</td>
-          <td>{{discount}}</td>
+          <td>{{totalDiscount}}</td>
         </tr>
         <tr>
           <td>Total Price</td>
-          <td>{{totalPrice}}</td>
+          <td>{{priceAfterDiscount}}</td>
         </tr>
       </table>
     </div>
@@ -52,33 +55,40 @@
         el: '.container',
         data: {
             bananaPrice: 10,
-            totalPrice: 0,
+            priceAfterDiscount: 0,
             numberOfBananas: 0,
-            discount: 0
+            totalDiscount: 0,
+            fullPrice: 0
         },
         methods: {
             calculateDiscount: function () {
                 if (this.numberOfBananas > 10) {
-                    return 10;
+                    this.fullPrice * 0.2;
                 }
                 if (this.numberOfBananas > 20) {
-                    return 20;
+                    this.fullPrice * 0.4;
                 }
-                if (this.numberOfBananas > 30) {
-                    return 30;
-                }
-                return 0;
             },
+
             calculatePrice: function () {
-                this.discount = this.calculateDiscount();
-                this.totalPrice = (this.numberOfBananas * this.bananaPrice) * ((100 - this.discount) / 100);
+                if (isNumeric(this.numberOfBananas)) {
+                    this.fullPrice = this.numberOfBananas * this.bananaPrice;
+                    this.totalDiscount = this.calculateDiscount();
+                    this.priceAfterDiscount = this.fullPrice - this.calculateDiscount();
+                }
             },
+
             clear: function () {
-                this.totalPrice = 0;
-                this.discount = 0;
+                this.priceAfterDiscount = 0;
+                this.fullPrice = 0;
+                this.totalDiscount = 0;
             }
 
         }
-    })
+    });
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
 </script>
 </html>
