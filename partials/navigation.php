@@ -3,7 +3,8 @@ $navigation = [
     "banana shop",
     "prime number",
     "sin city",
-    "sparta"
+    "sparta",
+    "registracia"
 ];
 $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 
