@@ -90,6 +90,7 @@ function registration_result()
     color: #4c4c4c;
     background: none;
   }
+
   body {
     background-color: #f6f6f6;
   }
@@ -189,28 +190,54 @@ function registration_result()
   <div class="col-md-4 col-md-offset-4">
     <form action="" method="POST">
       <div class="form-group <? echo validate_empty($email) ? "has-error" : ""; ?>">
-        <input type="email" class="form-control" name="email" placeholder="Email" value="<? echo $email ?>">
+        <input type="email"
+               class="form-control"
+               name="email"
+               placeholder="Email"
+               value="<? echo $email ?>">
       </div>
-      <div class="form-group <? echo validate_empty($name) ? "has-error" : ""; ?>">
-        <input type="text" class="form-control" name="name" placeholder="Meno" value="<? echo $name ?>">
+      <div class="form-group
+      <? echo validate_empty($name) ? "has-error" : ""; ?>">
+        <input type="text"
+               class="form-control"
+               name="name"
+               placeholder="Meno"
+               value="<? echo $name ?>">
       </div>
       <div class="form-group <? echo validate_empty($surname) ? "has-error" : ""; ?>">
-        <input type="text" class="form-control" name="surname" placeholder="Priezvisko"
+        <input type="text"
+               class="form-control"
+               name="surname"
+               placeholder="Priezvisko"
                value="<? echo $surname ?>">
       </div>
       <div class="form-group <? echo validate_password() ? "has-error" : ""; ?>">
-        <input type="password" class="form-control" name="password" placeholder="Heslo">
+        <input type="password"
+               class="form-control"
+               name="password"
+               placeholder="Heslo">
       </div>
       <div class="form-group <? echo validate_password() ? "has-error" : ""; ?>">
-        <input type="password" class="form-control" name="password-repeat" placeholder="Heslo znovu">
+        <input
+          type="password"
+          class="form-control"
+          name="password-repeat"
+          placeholder="Heslo znovu">
       </div>
       <div class="checkbox form-group">
-        <input id="checkbox" name="robot" type="checkbox" class="checkbox" required>
+        <input id="checkbox"
+               name="robot"
+               type="checkbox"
+               class="checkbox"
+               required>
         <label for="checkbox">
           Som robot
         </label>
       </div>
-      <button type="submit" class="btn btn-success btn-lg btn-block">Registruj sa</button>
+      <button type="submit"
+              class="btn btn-success btn-lg btn-block">
+        Registruj sa
+      </button>
     </form>
     <div class="result text-center">
         <? registration_result() ?>
