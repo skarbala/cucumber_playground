@@ -1,5 +1,6 @@
 <?php
 $navigation = [
+    "click me baby",
     "banana shop",
     "prime number",
     "sin city",
