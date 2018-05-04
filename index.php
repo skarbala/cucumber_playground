@@ -5,7 +5,7 @@
 <?php include 'partials/head.php'; ?>
 <style>
   body {
-    /*background: url("assets/img/JOKER_BACKGROUND.jpg") no-repeat center center fixed;*/
+    background: url("assets/img/poison_ivy_background.jpg") no-repeat center center fixed;
     background-size: cover;
   }
   #cucumber{
@@ -20,13 +20,7 @@
 </style>
 <body>
 <?php include 'partials/navigation.php' ?>
-<img src="assets/img/cucumber.png" alt="" id="cucumber">
+<!--<img src="assets/img/cucumber.png" alt="" id="cucumber">-->
 </body>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script>
-    $(document).ready(function () {
-        var cucumber = $("#cucumber");
-        cucumber.draggable();
-    });
-</script>
+
 </html>
