@@ -59,9 +59,9 @@ function registration_result()
 {
     if ($_POST) {
         if (validate()) {
-            echo "<div class=\"alert alert-success\"><strong>Registracia uspesna!</strong></div>";
+            echo "<div class=\"alert alert-success\"><strong>Registration successful!</strong></div>";
         } else {
-            echo "<div class=\"alert alert-danger\"><strong>Registracia neuspesna!</strong> </div>";
+            echo "<div class=\"alert alert-danger\"><strong>Registration failed!</strong></div>";
         }
     }
 
@@ -186,7 +186,7 @@ function registration_result()
 <body>
 <?php include 'partials/navigation.php' ?>
 <div class="container">
-  <h1 class="text-center">Registracia</h1>
+  <h1 class="text-center">Registration</h1>
   <div class="col-md-4 col-md-offset-4">
     <form action="" method="POST">
       <div class="form-group <? echo validate_empty($email) ? "has-error" : ""; ?>">
@@ -201,28 +201,28 @@ function registration_result()
         <input type="text"
                class="form-control"
                name="name"
-               placeholder="Meno"
+               placeholder="Name"
                value="<? echo $name ?>">
       </div>
       <div class="form-group <? echo validate_empty($surname) ? "has-error" : ""; ?>">
         <input type="text"
                class="form-control"
                name="surname"
-               placeholder="Priezvisko"
+               placeholder="Surname"
                value="<? echo $surname ?>">
       </div>
       <div class="form-group <? echo validate_password() ? "has-error" : ""; ?>">
         <input type="password"
                class="form-control"
                name="password"
-               placeholder="Heslo">
+               placeholder="Password">
       </div>
       <div class="form-group <? echo validate_password() ? "has-error" : ""; ?>">
         <input
           type="password"
           class="form-control"
           name="password-repeat"
-          placeholder="Heslo znovu">
+          placeholder="Repeat password">
       </div>
       <div class="checkbox form-group">
         <input id="checkbox"
@@ -231,12 +231,12 @@ function registration_result()
                class="checkbox"
                required>
         <label for="checkbox">
-          Som robot
+          I'm robot
         </label>
       </div>
       <button type="submit"
               class="btn btn-success btn-lg btn-block">
-        Registruj sa
+       Register
       </button>
     </form>
     <div class="result text-center">

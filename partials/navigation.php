@@ -5,7 +5,7 @@ $navigation = [
     "prime number",
     "sin city",
     "sparta",
-    "registracia"
+    "registration"
 ];
 $current_page = basename($_SERVER['REQUEST_URI'], ".php");
 
