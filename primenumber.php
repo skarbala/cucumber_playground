@@ -105,6 +105,5 @@
         return num !== 1;
     }
 
-
 </script>
 </html>
