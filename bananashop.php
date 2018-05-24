@@ -54,7 +54,8 @@
     font-size: 20px;
 
   }
-  table td{
+
+  table td {
     color: #444444;
   }
 
@@ -123,9 +124,8 @@
             calculatePrice: function () {
                 if (isNumeric(this.numberOfBananas)) {
                     this.fullPrice = this.numberOfBananas * this.bananaPrice;
-                    this.priceAfterDiscount =
-                        Math.round(this.fullPrice * (1 - calculateDiscountRate(this.numberOfBananas)));
-                    this.totalDiscount = this.fullPrice - this.priceAfterDiscount;
+                    this.totalDiscount = (this.fullPrice * (calculateDiscountRate(this.numberOfBananas))).toFixed(2);
+                    this.priceAfterDiscount = this.fullPrice - this.totalDiscount;
                 }
             },
 
@@ -138,9 +138,9 @@
         }
     });
 
-      function isNumeric(n) {
-          return !isNaN(parseFloat(n)) && isFinite(n);
-      }
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
 
     function calculateDiscountRate(numberOfBananas) {
         switch (true) {
