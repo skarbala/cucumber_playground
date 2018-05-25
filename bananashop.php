@@ -144,7 +144,7 @@
 
     function calculateDiscountRate(numberOfBananas) {
         switch (true) {
-            case (numberOfBananas > 10 && numberOfBananas < 20):
+            case (numberOfBananas >= 10 && numberOfBananas < 20):
                 return 0.1;
             case (numberOfBananas >= 20):
                 return 0.2;
